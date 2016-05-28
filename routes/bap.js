@@ -1,14 +1,14 @@
 'use strict'
 
-exports.register = (server, options, next) => {
-  server.route({
-    method: 'GET',
-    path: '/test',
-    handler: (request, reply) => {
-      reply('test passed')
+exports.register = require('../lib/utils').routePlugin(
+  require('path').basename(__filename, '.js'),
+  [
+    {
+      method: 'GET',
+      path: '/test',
+      handler: (request, reply) => {
+        reply('test passed')
+      }
     }
-  })
-  next()
-}
-
-exports.register.attributes = { name: 'bap' }
+  ]
+)
