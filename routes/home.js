@@ -7,7 +7,7 @@ exports.register = require('../lib/utils').routePlugin(
       method: 'GET',
       path: '/',
       handler: (request, reply) => {
-        reply('Hello, world')
+        reply('Hello, world').etag('mama')
       }
     }
   ]
