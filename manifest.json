@@ -12,8 +12,30 @@
       }
     },
     {
-      "plugin": { "register": "./routes/bap" },
-      "options": { "routes": { "prefix": "/woot" } }
+      "plugin": {
+        "register": "dogwater",
+        "options": {
+          "connections": {
+            "memoryDB": {
+              "adapter": "memory"
+            }
+          },
+          "adapters": {
+            "memory": "sails-memory"
+          },
+          "models": [{
+            "schema": true,
+            "identity": "user",
+            "connection": "memoryDB",
+            "attributes": {
+              "name": {
+                "type": "string",
+                "unique": true
+              }
+            }
+          }]
+        }
+      }
     },
     { "plugin": "./routes/home" },
     {
@@ -36,6 +58,10 @@
           }
         }
       }
+    },
+    {
+      "plugin": { "register": "./routes/bap" },
+      "options": { "routes": { "prefix": "/woot" } }
     }
   ]
 }
