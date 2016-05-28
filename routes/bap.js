@@ -1,7 +1,7 @@
 'use strict'
 
 exports.register = require('../lib/utils').routePlugin(
-  require('path').basename(__filename, '.js'),
+  'bap',
   [
     {
       method: 'GET',
@@ -22,7 +22,7 @@ exports.register = require('../lib/utils').routePlugin(
       method: 'GET',
       path: '/dog/{id}',
       handler: (request, reply) => request.collections.dogs.findOne(request.params.id)
-        .then((user) => reply.view('le-tpl', { user }))
+        .then((user) => reply.view('le-tpl', { user: user, and: request.collections.dogs.ohmy() }))
     },
     {
       method: 'GET',

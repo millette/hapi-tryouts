@@ -23,16 +23,7 @@
           "adapters": {
             "memory": "sails-memory"
           },
-          "models": [{
-            "identity": "dogs",
-            "connection": "memoryDB",
-            "attributes": {
-              "name": {
-                "type": "string",
-                "unique": true
-              }
-            }
-          }],
+          "models": "lib/models",
           "fixtures": [{
             "model": "dogs",
             "items": [

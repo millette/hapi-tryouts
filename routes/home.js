@@ -1,7 +1,7 @@
 'use strict'
 
 exports.register = require('../lib/utils').routePlugin(
-  require('path').basename(__filename, '.js'),
+  'home',
   [{
     method: 'GET',
     path: '/',
