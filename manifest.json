@@ -5,8 +5,16 @@
       "plugin": { "register": "./routes/bap" },
       "options": { "routes": { "prefix": "/woot" } }
     },
+    { "plugin": "./routes/home" },
+    { "plugin": "vision" },
     {
-      "plugin": { "register": "./routes/home" }
+      "plugin": {
+        "register": "visionary",
+        "options": {
+          "engines": { "pug": "pug" },
+          "path": "tpls"
+        }
+      }
     },
     {
       "plugin": {

@@ -9,6 +9,13 @@ exports.register = require('../lib/utils').routePlugin(
       handler: (request, reply) => {
         reply('test passed')
       }
+    },
+    {
+      method: 'GET',
+      path: '/templated',
+      handler: (request, reply) => {
+        reply.view('le-tpl', { cnt: 'test passed' })
+      }
     }
   ]
 )
