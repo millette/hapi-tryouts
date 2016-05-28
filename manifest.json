@@ -1,0 +1,10 @@
+{
+  "connections": [
+    {
+      "port": 8000,
+      "labels": ["web"]
+    }
+  ],
+  "registrations": []
+}
+
