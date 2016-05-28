@@ -2,7 +2,7 @@
 
 const Glue = require('glue')
 
-Glue.compose(require('./manifest.json'))
+Glue.compose(require('./manifest.json'), { relativeTo: __dirname })
   .then((server) => {
     server.route({
       method: 'GET',

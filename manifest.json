@@ -1,8 +1,9 @@
 {
-  "connections": [
+  "connections": [ { "port": 8800 } ],
+  "registrations": [
     {
-      "port": 8800
+      "plugin": { "register": "./routes/bap" },
+      "options": { "routes": { "prefix": "/woot" } }
     }
   ]
 }
-
