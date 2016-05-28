@@ -4,6 +4,9 @@
     {
       "plugin": { "register": "./routes/bap" },
       "options": { "routes": { "prefix": "/woot" } }
+    },
+    {
+      "plugin": { "register": "./routes/home" }
     }
   ]
 }

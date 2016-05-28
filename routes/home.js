@@ -3,12 +3,13 @@
 exports.register = (server, options, next) => {
   server.route({
     method: 'GET',
-    path: '/test',
+    path: '/',
     handler: (request, reply) => {
-      reply('test passed')
+      reply('Hello, world!')
     }
   })
+
   next()
 }
 
-exports.register.attributes = { name: 'bap' }
+exports.register.attributes = { name: 'home' }
