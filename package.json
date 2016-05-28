@@ -4,6 +4,7 @@
   "description": "hapi thingy",
   "main": "server.js",
   "scripts": {
+    "rejoice": "rejoice -c manifest.json -p $(pwd)",
     "lint": "standard",
     "start": "standard && node server.js",
     "test": "standard && nyc ava",
@@ -34,6 +35,7 @@
     "good-console": "^6.1.2",
     "good-squeeze": "^3.0.1",
     "hapi": "^13.4.1",
+    "rejoice": "^3.2.0",
     "sails-memory": "^0.10.6",
     "vision": "^4.1.0",
     "visionary": "^6.0.0"
