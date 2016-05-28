@@ -24,8 +24,7 @@
             "memory": "sails-memory"
           },
           "models": [{
-            "schema": true,
-            "identity": "user",
+            "identity": "dogs",
             "connection": "memoryDB",
             "attributes": {
               "name": {
@@ -33,6 +32,14 @@
                 "unique": true
               }
             }
+          }],
+          "fixtures": [{
+            "model": "dogs",
+            "items": [
+              { "name": "Guinness" },
+              { "name": "Sully" },
+              { "name": "Ren" }
+            ]
           }]
         }
       }

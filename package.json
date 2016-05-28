@@ -33,6 +33,7 @@
     "good": "^7.0.1",
     "good-console": "^6.1.2",
     "good-squeeze": "^3.0.1",
+    "hapi": "^13.4.1",
     "sails-memory": "^0.10.6",
     "vision": "^4.1.0",
     "visionary": "^6.0.0"
