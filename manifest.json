@@ -1,11 +1,6 @@
 {
   "connections": [ { "port": 8800 } ],
   "registrations": [
-    {
-      "plugin": { "register": "./routes/bap" },
-      "options": { "routes": { "prefix": "/woot" } }
-    },
-    { "plugin": "./routes/home" },
     { "plugin": "vision" },
     {
       "plugin": {
@@ -16,6 +11,11 @@
         }
       }
     },
+    {
+      "plugin": { "register": "./routes/bap" },
+      "options": { "routes": { "prefix": "/woot" } }
+    },
+    { "plugin": "./routes/home" },
     {
       "plugin": {
         "register": "good",
