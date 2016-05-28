@@ -1,18 +1,33 @@
 {
   "name": "col",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "description": "hapi thingy",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "start": "standard && node server.js",
+    "test": "standard && nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "hapi"
+  ],
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "AGPL-3.0",
   "devDependencies": {
     "ava": "^0.15.1",
     "coveralls": "^2.11.9",
     "nyc": "^6.4.4",
     "standard": "^7.1.1"
+  },
+  "dependencies": {
+    "glue": "^3.2.1"
   }
 }
