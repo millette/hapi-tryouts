@@ -75,7 +75,11 @@
     },
     {
       "plugin": "./routes/users",
-      "options": { "select": ["web", "api"] }
+      "options": { "select": ["web"] }
+    },
+    {
+      "plugin": "./routes/api-users",
+      "options": { "select": ["api"] }
     }
   ]
 }
