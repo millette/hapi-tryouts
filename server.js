@@ -8,7 +8,9 @@ Glue.compose(require('./manifest.json'), { relativeTo: __dirname })
     return server
   })
   .then((server) => {
-    console.log('hapi days!', server.info.uri)
+    server.connections.forEach((connection) => {
+      console.log('hapi days connections!', connection.info.uri)
+    })
   })
   .catch((err) => {
     console.error('ERROR:', err)

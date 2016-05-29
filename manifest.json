@@ -1,5 +1,14 @@
 {
-  "connections": [ { "port": 8800 } ],
+  "connections": [
+    {
+      "port": 8800,
+      "labels": ["web"]
+    },
+    {
+      "port": 8801,
+      "labels": ["api"]
+    }
+  ],
   "registrations": [
     { "plugin": "vision" },
     {
@@ -40,7 +49,9 @@
         }
       }
     },
-    { "plugin": "./routes/home" },
+    {
+      "plugin": "./routes/home"
+    },
     {
       "plugin": {
         "register": "good",
@@ -62,6 +73,9 @@
         }
       }
     },
-    { "plugin": "./routes/users" }
+    {
+      "plugin": "./routes/users",
+      "options": { "select": ["web", "api"] }
+    }
   ]
 }
