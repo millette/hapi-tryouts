@@ -3,6 +3,7 @@
 module.exports = {
   identity: 'dogs',
   connection: 'memoryDB',
+  schema: true,
   attributes: {
     name: {
       type: 'string',
