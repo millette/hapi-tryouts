@@ -4,6 +4,14 @@
     { "plugin": "vision" },
     {
       "plugin": {
+        "register": "bedwetter",
+        "options": {
+          "prefix": "/woot"
+        }
+      }
+    },
+    {
+      "plugin": {
         "register": "visionary",
         "options": {
           "engines": { "pug": "pug" },

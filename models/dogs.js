@@ -9,6 +9,9 @@ module.exports = {
       type: 'string',
       unique: true
     },
+    toJSON: function () {
+      return this.name.toUpperCase()
+    },
     flop: function () {
       return this.name.toUpperCase()
     }

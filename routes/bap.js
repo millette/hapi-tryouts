@@ -20,14 +20,28 @@ exports.register = require('../lib/utils').routePlugin(
     },
     {
       method: 'GET',
-      path: '/dog/{id}',
+      path: '/ya/{id}',
       handler: (request, reply) => request.collections.dogs.findOne(request.params.id)
-        .then((user) => reply.view('le-tpl', { user: user, and: request.collections.dogs.ohmy() }))
+        .then((user) => reply.view('le-tpl', { user: user.toObject(), and: request.collections.dogs.ohmy() }))
     },
     {
       method: 'GET',
-      path: '/dog-b/{id}',
+      path: '/yab/{id}',
       handler: (request, reply) => reply(request.collections.dogs.findOne(request.params.id))
+    },
+    {
+      method: 'GET',
+      path: '/dogs',
+      handler: {
+        bedwetter: null
+      }
+    },
+    {
+      method: 'GET',
+      path: '/dogs/{id}',
+      handler: {
+        bedwetter: null
+      }
     }
   ]
 )
