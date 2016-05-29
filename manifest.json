@@ -4,10 +4,7 @@
     { "plugin": "vision" },
     {
       "plugin": {
-        "register": "bedwetter",
-        "options": {
-          "prefix": "/woot"
-        }
+        "register": "bedwetter"
       }
     },
     {
@@ -15,7 +12,7 @@
         "register": "visionary",
         "options": {
           "engines": { "pug": "pug" },
-          "path": "tpls"
+          "path": "views"
         }
       }
     },
@@ -33,7 +30,7 @@
           },
           "models": "lib/models",
           "fixtures": [{
-            "model": "dogs",
+            "model": "users",
             "items": [
               { "name": "Guinness" },
               { "name": "Sully" },
@@ -65,9 +62,6 @@
         }
       }
     },
-    {
-      "plugin": { "register": "./routes/bap" },
-      "options": { "routes": { "prefix": "/woot" } }
-    }
+    { "plugin": "./routes/users" }
   ]
 }
