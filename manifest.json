@@ -13,11 +13,6 @@
     { "plugin": "vision" },
     {
       "plugin": {
-        "register": "bedwetter"
-      }
-    },
-    {
-      "plugin": {
         "register": "visionary",
         "options": {
           "engines": { "pug": "pug" },
@@ -49,9 +44,7 @@
         }
       }
     },
-    {
-      "plugin": "./routes/home"
-    },
+    { "plugin": "bedwetter" },
     {
       "plugin": {
         "register": "good",
@@ -72,6 +65,10 @@
           }
         }
       }
+    },
+    {
+      "plugin": "./routes/home",
+      "options": { "select": ["web"] }
     },
     {
       "plugin": "./routes/users",

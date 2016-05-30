@@ -7,7 +7,13 @@ exports.register = require('../lib/utils').routePlugin(
       method: 'GET',
       path: '/users/{id}',
       handler: (request, reply) => request.collections.users.findOne(request.params.id)
-        .then((user) => reply.view('user', { user }))
+        .then((user) => reply.view('user', { user }).etag(user.updatedAt))
+    },
+    {
+      method: 'GET',
+      path: '/users/{id}/edit',
+      handler: (request, reply) => request.collections.users.findOne(request.params.id)
+        .then((user) => reply.view('user-edit', { user }).etag(user.updatedAt))
     },
     {
       method: 'GET',

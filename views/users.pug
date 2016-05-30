@@ -3,5 +3,3 @@ h1 Many users
 ol
   each user in users
     li: a(href='users/' + user.id)= user.name
-
-pre= JSON.stringify(users, null, ' ')
