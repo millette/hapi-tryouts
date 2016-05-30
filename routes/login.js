@@ -36,7 +36,6 @@ exports.register = (server, options, next) => {
   server.route({
     method: 'GET',
     path: '/',
-
     config: {
       auth: {
         mode: 'optional',
@@ -57,8 +56,13 @@ exports.register = (server, options, next) => {
         if (!request.auth.isAuthenticated) {
           return reply('Authentication failed due to: ' + request.auth.error.message)
         }
+        request.auth.credentials.profile.name = request.auth.credentials.profile.username
         request.cookieAuth.set(request.auth.credentials)
-        return reply.redirect('/')
+        const Users = request.collections.users
+        console.log('PROFILE:', request.auth.credentials.profile)
+        return Users.findOrCreate(request.auth.credentials.profile.id, request.auth.credentials.profile)
+          .then((user) => reply.view('user', { user }).etag(user.updatedAt))
+        // return reply.redirect('/')
       }
     }
   })
