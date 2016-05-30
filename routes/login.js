@@ -6,7 +6,7 @@ const cookiePassword = 'cookie_encryption_password_secure'
 exports.register = (server, options, next) => {
   server.auth.strategy('session', 'cookie', {
     password: cookiePassword,
-    redirectTo: '/login/github',
+    // redirectTo: '/login/github',
     isSecure: secure     // Terrible idea but required if not using HTTPS especially if developing locally
   })
 
@@ -23,11 +23,33 @@ exports.register = (server, options, next) => {
 
   server.route({
     method: 'GET',
-    path: '/',
+    path: '/out',
     config: {
       auth: 'session',
       handler: (request, reply) => {
-        return reply(`Hello, ${request.auth.credentials.profile.displayName}!`)
+        request.cookieAuth.clear()
+        return reply('Login out.')
+      }
+    }
+  })
+
+  server.route({
+    method: 'GET',
+    path: '/',
+    /*
+    handler: (request, reply) => {
+      return reply.view('hello', { request })
+    }
+    */
+
+    config: {
+      auth: {
+        mode: 'optional',
+        strategies: ['session']
+      },
+      handler: (request, reply) => {
+        // return reply(`Hello, ${request.auth.credentials.profile.displayName}!`)
+        return reply.view('hello', { request })
       }
     }
   })
@@ -54,5 +76,5 @@ exports.register = (server, options, next) => {
 exports.register.attributes = {
   name: 'login',
   version: '0.0.0',
-  dependencies: ['bell', 'hapi-auth-cookie']
+  dependencies: ['vision', 'bell', 'hapi-auth-cookie']
 }

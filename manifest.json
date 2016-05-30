@@ -7,7 +7,8 @@
         "register": "visionary",
         "options": {
           "engines": { "pug": "pug" },
-          "path": "views"
+          "path": "views",
+          "isCached": false
         }
       }
     },

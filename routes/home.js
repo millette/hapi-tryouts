@@ -11,8 +11,11 @@ exports.register = require('../lib/utils').routePlugin(
     path: '/',
     // handler: (request, reply) => reply.view('home', { request: request, reply: reply, profile: request.auth.credentials.profile })
     config: {
-      auth: 'session',
-      handler: (request, reply) => reply.view('home', { request: request, reply: reply, profile: request.auth.credentials.profile })
+      auth: {
+        strategies: ['session'],
+        mode: 'optional'
+      },
+      handler: (request, reply) => reply.view('home', { request: request, reply: reply, profile: request.auth && request.auth.credentials && request.auth.credentials.profile })
     }
   }]
 )

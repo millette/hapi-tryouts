@@ -1,8 +1,11 @@
-h1 Home
+h1 Home66
 
 p: a(href='/users') Users
 
 p: a(href='/login') Login
+
+if profile
+  pre= JSON.stringify(profile, null, ' ')
 
 h2 conns
 ol
