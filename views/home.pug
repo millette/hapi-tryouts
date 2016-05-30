@@ -1,3 +1,29 @@
 h1 Home
 
 p: a(href='/users') Users
+
+h2 conns
+ol
+each conn in request.server.connections
+  li BEGIN
+  li= conn.info.id
+  li= conn.info.uri
+  li= conn.info.host
+  li= conn.info.port
+  li= conn.info.address
+  li END
+
+h2 url host
+p= request.url.host
+
+h2 url hostname
+p= request.url.hostname
+
+h2 url port
+p= request.url.port
+
+h2 info host
+p= request.info.host
+
+h2 info hostname
+p= request.info.hostname
