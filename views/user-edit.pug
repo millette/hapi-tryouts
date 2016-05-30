@@ -3,6 +3,6 @@ h1 One user
 
 pre= JSON.stringify(user, null, ' ')
 
-form(action=`http://localhost:8801/users/${user.id}` method='post')
+form(action=`/api/users/${user.id}` method='post')
   input(type='text' name='name' value=user.name)
   input(type='submit')

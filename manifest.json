@@ -1,14 +1,5 @@
 {
-  "connections": [
-    {
-      "port": 8800,
-      "labels": ["web"]
-    },
-    {
-      "port": 8801,
-      "labels": ["api"]
-    }
-  ],
+  "connections": [{ "port": 8800 }],
   "registrations": [
     { "plugin": "vision" },
     {
@@ -44,7 +35,12 @@
         }
       }
     },
-    { "plugin": "bedwetter" },
+    {
+      "plugin": {
+        "register": "bedwetter",
+        "options": { "prefix": "/api" }
+      }
+    },
     {
       "plugin": {
         "register": "good",
@@ -66,17 +62,11 @@
         }
       }
     },
-    {
-      "plugin": "./routes/home",
-      "options": { "select": ["web"] }
-    },
-    {
-      "plugin": "./routes/users",
-      "options": { "select": ["web"] }
-    },
+    { "plugin": "./routes/home" },
+    { "plugin": "./routes/users" },
     {
       "plugin": "./routes/api-users",
-      "options": { "select": ["api"] }
+      "options": { "routes": { "prefix": "/api" } }
     }
   ]
 }

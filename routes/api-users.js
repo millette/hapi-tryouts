@@ -1,7 +1,7 @@
 'use strict'
 
 exports.register = require('../lib/utils').routePlugin(
-  'users',
+  'api-users',
   [
     {
       method: 'GET',
