@@ -2,3 +2,7 @@ h1 One user
   small  (edit)
 
 pre= JSON.stringify(user, null, ' ')
+
+form(action=`http://localhost:8801/users/${user.id}` method='post')
+  input(type='text' name='name' value=user.name)
+  input(type='submit')

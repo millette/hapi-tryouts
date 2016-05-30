@@ -9,6 +9,11 @@ exports.register = require('../lib/utils').routePlugin(
       handler: { bedwetter: null }
     },
     {
+      method: 'POST',
+      path: '/users/{id}',
+      handler: { bedwetter: null }
+    },
+    {
       method: 'GET',
       path: '/users',
       handler: { bedwetter: null }
