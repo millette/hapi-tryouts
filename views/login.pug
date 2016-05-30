@@ -2,3 +2,9 @@ h1 Login
 
 p: a(href='/users') Users
 
+if request && request.auth && request.auth.isAuthenticated
+  p: a(href='/login/out') Logout
+else
+  p: a(href='/login/github') Login with github
+
+pre= JSON.stringify(request.auth, null, ' ')

@@ -36,11 +36,6 @@ exports.register = (server, options, next) => {
   server.route({
     method: 'GET',
     path: '/',
-    /*
-    handler: (request, reply) => {
-      return reply.view('hello', { request })
-    }
-    */
 
     config: {
       auth: {
@@ -48,8 +43,7 @@ exports.register = (server, options, next) => {
         strategies: ['session']
       },
       handler: (request, reply) => {
-        // return reply(`Hello, ${request.auth.credentials.profile.displayName}!`)
-        return reply.view('hello', { request })
+        return reply.view('login', { request })
       }
     }
   })
@@ -63,7 +57,6 @@ exports.register = (server, options, next) => {
         if (!request.auth.isAuthenticated) {
           return reply('Authentication failed due to: ' + request.auth.error.message)
         }
-        console.log('AUTH:', request.auth)
         request.cookieAuth.set(request.auth.credentials)
         return reply.redirect('/')
       }
