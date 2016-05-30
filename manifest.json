@@ -1,5 +1,5 @@
 {
-  "connections": [{ "port": 8800 }],
+  "connections": [{ "port": 3030 }],
   "registrations": [
     { "plugin": "vision" },
     {
@@ -63,6 +63,10 @@
           }
         }
       }
+    },
+    {
+      "plugin": "./routes/login",
+      "options": { "routes": { "prefix": "/login" } }
     },
     { "plugin": "./routes/home" },
     { "plugin": "./routes/users" },
