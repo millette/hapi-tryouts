@@ -1,5 +1,5 @@
 {
-  "name": "col",
+  "name": "hapi-tryouts",
   "version": "0.0.0",
   "description": "hapi thingy",
   "main": "server.js",
@@ -36,6 +36,7 @@
     "good-console": "^6.1.2",
     "good-squeeze": "^3.0.1",
     "hapi": "^13.4.1",
+    "pug": "^2.0.0-alpha8",
     "rejoice": "^3.2.0",
     "sails-memory": "^0.10.6",
     "vision": "^4.1.0",
