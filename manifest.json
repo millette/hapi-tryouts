@@ -41,6 +41,8 @@
         "options": { "prefix": "/api" }
       }
     },
+    { "plugin": "bell" },
+    { "plugin": "hapi-auth-cookie" },
     {
       "plugin": {
         "register": "good",

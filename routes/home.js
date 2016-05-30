@@ -1,7 +1,11 @@
 'use strict'
 
 exports.register = require('../lib/utils').routePlugin(
-  'home',
+  {
+    name: 'home',
+    version: '0.0.0',
+    dependencies: 'vision'
+  },
   [{
     method: 'GET',
     path: '/',
